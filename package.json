@@ -4,6 +4,12 @@
   "description": "Foundation webpack",
   "main": "index.js",
   "scripts": {
+    "start": "npm-run-all --parallel dev:server lint:watch",
+    "watch": "webpack -w -d",
+    "build": "webpack -d",
+    "dev:server": "webpack-dev-server --hot --inline --progress --colors",
+    "lint": "esw webpack.config.* src --color",
+    "lint:watch": "npm run lint -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -12,7 +18,10 @@
   ],
   "author": "Johan Martin <martin.johan@johan-martin.com> (http://www.johan-martin.com/)",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "foundation-sites": "^6.4.3"
+  },
   "devDependencies": {
     "autoprefixer": "^7.1.4",
     "awesome-typescript-loader": "^3.2.3",
@@ -42,5 +51,20 @@
     "url-loader": "^0.5.9",
     "webpack": "^3.5.6",
     "webpack-dev-server": "^2.7.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "ie >= 7"
+            ]
+          }
+        }
+      ]
+    ]
   }
 }
