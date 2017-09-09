@@ -1,3 +1,3 @@
-import '../ts/appt.ts'
+// import '../ts/appt.ts'
 
-console.log('test');
+console.log('test')
