@@ -16,8 +16,10 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Foundation proto',
-      template: 'src/index.html',
-      filename: 'index.html'
+      template: 'src/index/index.hbs',
+      filename: 'index.html',
+      cache: false,
+      hash: true
     }),
     new CleanWebPackPlugin(['dist']),
     new ExtractTextPlugin({
@@ -50,6 +52,10 @@ module.exports = {
           'css-loader',
           'postcss-loader'
         ]
+      },
+      {
+        test: /\.hbs$/,
+        use: 'handlebars-loader'
       },
       {
         test: /\.ts$/,
