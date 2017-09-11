@@ -82,6 +82,7 @@ module.exports = {
       }
     ]
   },
+  devtool: 'cheap-module-eval-source-map',
   devServer: {
     compress: true,
     hot: true
