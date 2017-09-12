@@ -16,14 +16,14 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Foundation proto',
-      template: 'src/index/index.hbs',
+      template: 'src/index/layout.hbs',
       filename: 'index.html',
       cache: false,
       hash: true
     }),
     new CleanWebPackPlugin(['dist']),
     new ExtractTextPlugin({
-      filename: 'stycles.css',
+      filename: 'styles.css',
       allChunks: true
     }),
     new webpack.optimize.UglifyJsPlugin({
