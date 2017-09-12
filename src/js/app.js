@@ -1,14 +1,12 @@
-// import * as Demo from '../ts/app.ts'
-import Template from '../templates/app.hbs'
+import $ from 'jquery';
+import whatInput from 'what-input';
 
-let data = {
-  'name': 'Alan',
-  'hometown': 'Somewhere, TX',
-  'kids': [{'name': 'Jimmy', 'age': '12'}, {'name': 'Sally', 'age': '4'}]
-}
+window.$ = $;
 
-let content = Template(data)
+import Foundation from 'foundation-sites';
+// If you want to pick and choose which modules to include, comment out the above and uncomment
+// the line below
+//import './lib/foundation-explicit-pieces';
 
-document.querySelector('main').innerHTML = content
 
-console.log(content)
+$(document).foundation();
