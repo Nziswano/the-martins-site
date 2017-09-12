@@ -1,5 +1,10 @@
-# Webpack, foundation and Handlebars
+# The Martin Family Website
+* About the Martin Family in South Africa
 
-1. Putting together Webpack to use handlebars and Foundation. Test to see if it will work.
-## Handlebars
-1. [handlebars-loader](https://github.com/pcardune/handlebars-loader)
+## Static Site
+* Using Webpack, Foundation
+
+## Hosting
+* Hosted on AWS via CloudFront
+* Using Amazon Certificate for https
+* Cloudfront to allow for fast access in South Africa.

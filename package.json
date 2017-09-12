@@ -1,8 +1,9 @@
 {
-  "name": "foundation-webpack",
+  "name": "Martin Family Website",
   "version": "0.0.1",
-  "description": "Foundation webpack",
-  "main": "index.js",
+  "description": "Website for the Martin Family",
+  "main": "js/app.js",
+  "repository": "https://github.com/catenare/the-martins-site.git",
   "scripts": {
     "start": "npm-run-all --parallel dev:server lint:watch",
     "watch": "webpack -w -d",
