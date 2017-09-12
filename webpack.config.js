@@ -32,7 +32,8 @@ module.exports = {
         drop_console: false
       }
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin()
   ],
   module: {
     rules: [
