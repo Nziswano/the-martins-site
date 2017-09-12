@@ -59,8 +59,9 @@
 //  54. Tooltip
 //  55. Top Bar
 //  56. Xy Grid
+//  57. Font-awesome path
 
-@import 'util/util';
+@import '~foundation-sites/scss/util/util';
 
 // 1. Global
 // ---------
@@ -866,3 +867,6 @@ $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
 $grid-container-max: $global-width;
 $xy-block-grid-max: 8;
+
+// 57. Font-awesome path
+$fa-font-path:   "~font-awesome/fonts";
