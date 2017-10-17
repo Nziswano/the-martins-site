@@ -4,7 +4,6 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebPackPlugin = require('clean-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const autoprefixer = require('autoprefixer')
 
 module.exports = {
   entry: './src/js/app.js',
@@ -15,7 +14,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Foundation proto',
+      title: 'The Martins',
       template: 'src/index/layout.hbs',
       filename: 'index.html',
       cache: false,
@@ -26,12 +25,6 @@ module.exports = {
       filename: 'styles.css',
       allChunks: true
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        drop_console: false
-      }
-    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin()
   ],
@@ -40,10 +33,7 @@ module.exports = {
       {
         test: /\.js$/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env']
-          }
+          loader: 'babel-loader'
         }
       },
       {
@@ -68,15 +58,7 @@ module.exports = {
           fallback: 'style-loader',
           use: [
             'css-loader',
-            {
-              loader: 'postcss-loader',
-              options:
-              {
-                plugins: function () {
-                  return [autoprefixer]
-                }
-              }
-            },
+            'postcss-loader',
             'sass-loader'
           ]
         })
