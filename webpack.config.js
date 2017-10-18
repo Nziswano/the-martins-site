@@ -15,7 +15,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'The Martins',
-      template: 'src/index/layout.hbs',
+      template: 'src/layout/home.hbs',
       filename: 'index.html',
       cache: false,
       hash: true

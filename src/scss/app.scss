@@ -19,12 +19,12 @@
 //@include foundation-accordion-menu;
 //@include foundation-badge;
 //@include foundation-breadcrumbs;
-//@include foundation-button-group;
+@include foundation-button-group;
 //@include foundation-callout;
 //@include foundation-card;
 //@include foundation-close-button;
-//@include foundation-menu;
-//@include foundation-menu-icon;
+@include foundation-menu;
+@include foundation-menu-icon;
 //@include foundation-drilldown-menu;
 //@include foundation-dropdown;
 //@include foundation-dropdown-menu;
@@ -55,4 +55,7 @@
 //@include motion-ui-animations;
 
 /* Put custom scss modules here */
+@import 'custom/hero';
+@import 'custom/mailchimp';
+@import 'custom/footer';
 
