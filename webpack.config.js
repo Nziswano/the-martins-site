@@ -65,15 +65,17 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url-loader',
-        query: {
-          limit: 10000
+        loader: 'file-loader',
+        options: {
+          limit: 10000,
+          name: '[name].[ext]',
+          outputPath: 'assets/'
         }
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
-        query: {
+        options: {
           limit: 10000
         }
       }
