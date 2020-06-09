@@ -5,6 +5,5 @@
 * Using Webpack, Foundation
 
 ## Hosting
-* Hosted on AWS via CloudFront
-* Using Amazon Certificate for https
-* Cloudfront to allow for fast access in South Africa.
+* Hosted on Google Firebase
+`firebase deploy --only hosting`
