@@ -2,8 +2,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CleanWebPackPlugin = require('clean-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   entry: './src/js/app.js',
@@ -20,11 +19,7 @@ module.exports = {
       cache: false,
       hash: true
     }),
-    new CleanWebPackPlugin(['dist']),
-    new ExtractTextPlugin({
-      filename: 'styles.css',
-      allChunks: true
-    }),
+    new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin()
   ],
@@ -32,17 +27,17 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
         }
       },
       {
-        test: /\.css$/,
-        loaders: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader'
-        ]
+        test: /\.s[ac]ss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
         test: /\.hbs$/,
@@ -51,17 +46,6 @@ module.exports = {
       {
         test: /\.ts$/,
         loader: 'awesome-typescript-loader'
-      },
-      {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader',
-            'postcss-loader',
-            'sass-loader'
-          ]
-        })
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
